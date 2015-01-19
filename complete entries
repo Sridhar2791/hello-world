@@ -1,0 +1,18 @@
+complete = function ( directory = "specdata" ,id = 1:332){
+  b = list.files(directory) 
+  v = rep(0,3)
+  names(v) = ("a","b","c")
+  non.na = 0
+  list.no = 0
+  
+  for(i in id){ 
+    
+    data = read.csv(b[i])
+    list.no = list.no + 1
+    non.na = min(colSums(!is.na(data)))
+    v = cbind(v,v)
+    v = list(list.no,id[list.no],non.na)
+    print(v)
+  }
+
+}
